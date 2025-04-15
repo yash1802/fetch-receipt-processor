@@ -43,11 +43,9 @@ Example Response:
 
   **server.py**: establishes a Flask web server and defines two routes to process receipts and retrieve points associated with a receipt. It imports necessary functions from utils.py and validations.py to calculate points based on receipt data and validate receipt structures, respectively. The file contains main functionality to receive POST requests at /receipts/process to process new receipts, and GET requests at /receipts/{id}/points to retrieve points associated with a given receipt ID.
 
-  **validations.py** : contains functions to validate the receipt structure and its content, ensuring that the data provided adheres to specified conditions. For example, it checks the type and format of the retailer name, purchase date and time, total amount, and item structure in the receipt. It also defines a ValidationResult class to encapsulate the result of a validation check.
+  **validation.py** : contains functions to validate the receipt structure and its content, ensuring that the data provided adheres to specified conditions. For example, it checks the type and format of the retailer name, purchase date and time, total amount, and item structure in the receipt. It also defines a ValidationResult class to encapsulate the result of a validation check.
 
   **utils.py**: contains a collection of functions to calculate points based on different criteria provided in a receipt. Each function takes a receipt dictionary as input and returns points based on certain conditions like the retailer's name, purchase date and time, total amount, and item descriptions among others. The file also contains a main function get_total_receipt_points which aggregates points from all the criteria.
-
-  **test_utils.py**: includes unit tests for the functions defined in utils.py. It uses the unittest framework to define test cases ensuring that the point calculation functions work as expected.
 
 ## Setup and running instructions
 
